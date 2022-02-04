@@ -1,10 +1,8 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
-public class Pistol : MonoBehaviour, IGun
+public class GhostGun : MonoBehaviour, IGun
 {
     [SerializeField] private float rechargeTime = 0.25f;
     [SerializeField] [Range(0, 100)] private int damage;
@@ -26,7 +24,7 @@ public class Pistol : MonoBehaviour, IGun
         
         b.shooter = shooter;
         b.damage = damage;
-        b.CanShotThroughObstacles = false;
+        b.CanShotThroughObstacles = true;
         bullet.transform.position = start;
         bullet.transform.forward = forward;
         

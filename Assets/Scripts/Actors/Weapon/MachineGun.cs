@@ -6,7 +6,6 @@ public class MachineGun : MonoBehaviour, IGun
 {
     [SerializeField] private float rechargeTime = 0.25f;
     [SerializeField] [Range(0, 100)] private int damage;
-    [SerializeField] private bool canShotThroughObstacles;
     private float currentRechargeTime;
     private BulletManager bulletManager;
 
@@ -24,7 +23,7 @@ public class MachineGun : MonoBehaviour, IGun
         var b = bullet.GetComponent<Bullet>();
         b.shooter = shooter;
         b.damage = damage;
-        b.CanShotThroughObstacles = canShotThroughObstacles;
+        b.CanShotThroughObstacles = false;
         bullet.transform.position = start;
         bullet.transform.forward = forward;
         
@@ -32,7 +31,7 @@ public class MachineGun : MonoBehaviour, IGun
         b = bullet.GetComponent<Bullet>();
         b.shooter = shooter;
         b.damage = damage;
-        b.CanShotThroughObstacles = canShotThroughObstacles;
+        b.CanShotThroughObstacles = false;
         bullet.transform.position = start;
         bullet.transform.forward = forward + transform.right * 0.25f;
         
@@ -40,7 +39,7 @@ public class MachineGun : MonoBehaviour, IGun
         b = bullet.GetComponent<Bullet>();
         b.shooter = shooter;
         b.damage = damage;
-        b.CanShotThroughObstacles = canShotThroughObstacles;
+        b.CanShotThroughObstacles = false;
         bullet.transform.position = start;
         bullet.transform.forward = forward + -transform.right * 0.25f;
         
